@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  // Use GitHub Pages subpath and output to docs directory
+  // Deploy to GitHub Pages from /docs
   base: '/flowerlani-portfolio/',
   outDir: 'docs',
   integrations: [tailwind()],
