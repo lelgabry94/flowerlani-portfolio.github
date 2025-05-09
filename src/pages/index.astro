@@ -1,18 +1,288 @@
 ---
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leilani's Portfolio</title>
+    <title>Beautiful Lila's Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --dark-bg: #1c1b22;
+            --card-bg: #28262e;
+            --accent-purple: #9d8ba9;
+            --text-light: #a69fad;
+            --text-heading: #b7a9c2;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        h1, h2, h3 {
+            color: var(--text-heading);
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            border-radius: 5px;
+            padding: 1rem;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+        
+        .card-wide {
+            height: 200px;
+        }
+        
+        .card-featured {
+            height: 250px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .featured {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 1.5rem;
+        }
+        
+        .about {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+            border: 1px solid var(--accent-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 1px solid var(--accent-purple);
+        }
+        
+        .creative-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .blog-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .timeline {
+            position: absolute;
+            right: 180px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: var(--accent-purple);
+            z-index: 0;
+        }
+        
+        .timeline-point {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--dark-bg);
+            border: 1px solid var(--accent-purple);
+            left: -7px;
+        }
+        
+        .timeline-label {
+            position: absolute;
+            right: -150px;
+            width: 140px;
+            text-align: left;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            height: 1px;
+            width: 60px;
+            background-color: var(--accent-purple);
+            right: -60px;
+        }
+        
+        .flower {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 250px;
+            height: 800px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .flower svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .placeholder-text {
+            background-color: var(--accent-purple);
+            opacity: 0.4;
+            height: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            width: 90%;
+        }
+        
+        .placeholder-text.short {
+            width: 60%;
+        }
+        
+        .keyword {
+            font-size: 0.85rem;
+            color: var(--text-heading);
+            margin-top: 0.5rem;
+        }
+        
+        .keyword span {
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
-    <main class="min-h-screen bg-gray-100">
-        <div class="container mx-auto px-4 py-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to My Portfolio</h1>
-            <p class="text-lg text-gray-600">This is a test page to verify the deployment is working correctly.</p>
+    <div class="container">
+        <!-- Decorative flower illustration -->
+        <div class="flower">
+            <svg viewBox="0 0 200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 30C100 400 100 770 100 770" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M70 100C90 80 110 80 130 100C150 120 150 140 130 160C110 180 90 180 70 160C50 140 50 120 70 100Z" fill="#9d8ba9" opacity="0.7"/>
+                <ellipse cx="100" cy="130" rx="15" ry="15" fill="#9d8ba9"/>
+                <path d="M140 70C150 60 165 65 170 80C175 95 170 110 155 115C140 120 125 110 120 95" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M60 70C50 60 35 65 30 80C25 95 30 110 45 115C60 120 75 110 80 95" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M120 180C130 190 135 205 130 220C125 235 110 240 95 235C80 230 75 215 80 200" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M80 180C70 190 65 205 70 220C75 235 90 240 105 235C120 230 125 215 120 200" stroke="#9d8ba9" stroke-width="1"/>
+                <ellipse cx="100" cy="450" rx="8" ry="8" fill="#9d8ba9"/>
+                <ellipse cx="100" cy="600" rx="8" ry="8" fill="#9d8ba9"/>
+                <path d="M70 450L130 450" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M70 600L130 600" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M60 480L80 480" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M120 480L140 480" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M60 630L80 630" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M120 630L140 630" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M60 510L140 510" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M60 660L140 660" stroke="#9d8ba9" stroke-width="1"/>
+                <path d="M100 280C110 280 120 290 120 300C120 310 110 320 100 335C90 320 80 310 80 300C80 290 90 280 100 280Z" fill="#9d8ba9" opacity="0.5"/>
+                <path d="M110 700C100 690 90 690 80 700C70 710 70 720 80 730C90 740 100 740 110 730C120 720 120 710 110 700Z" fill="#9d8ba9" opacity="0.5"/>
+            </svg>
         </div>
-    </main>
+        
+        <!-- Main content -->
+        <h1 class="section-title">Project Gallery</h1>
+        
+        <div class="gallery">
+            <div class="card">
+                <div class="keyword">Hover <span>over all Keywords</span></div>
+            </div>
+            <div class="card">
+                <div class="keyword">Keyer <span>reveals Keywords</span></div>
+            </div>
+            <div class="card">
+                <div class="keyword">Keywordrd <span>Keywords</span></div>
+            </div>
+        </div>
+        
+        <h1 class="section-title">Featured Project</h1>
+        
+        <div class="featured">
+            <div class="card card-featured"></div>
+            <div class="card card-featured">
+                <h2>The Skin Source</h2>
+                <div class="placeholder-text"></div>
+                <div class="placeholder-text"></div>
+                <div class="placeholder-text short"></div>
+            </div>
+        </div>
+        
+        <h1 class="section-title">About Me</h1>
+        
+        <div class="about">
+            <div class="profile-pic">
+                <div class="profile-circle"></div>
+            </div>
+            <div>
+                <h2>Values-based</h2>
+                <div class="placeholder-text"></div>
+                <div class="placeholder-text"></div>
+                <div class="placeholder-text short"></div>
+            </div>
+        </div>
+        
+        <h1 class="section-title">Creative Stack</h1>
+        
+        <div class="creative-stack">
+            <div>
+                <h3>Résumé</h3>
+                <div class="card"></div>
+            </div>
+            <div>
+                <h3>Skills</h3>
+                <div class="card"></div>
+            </div>
+        </div>
+        
+        <h1 class="section-title">Blog</h1>
+        
+        <div class="blog-section">
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+        
+        <h1 class="section-title">Contact</h1>
+        
+        <!-- Timeline -->
+        <div class="timeline">
+            <div class="timeline-point" style="top: 440px;">
+                <div class="timeline-line"></div>
+                <div class="timeline-label">My Journey</div>
+            </div>
+            <div class="timeline-point" style="top: 590px;"></div>
+        </div>
+    </div>
 </body>
 </html>
